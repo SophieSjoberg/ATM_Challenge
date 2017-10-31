@@ -22,9 +22,12 @@ end
     expected_output = { status: false, message: 'insufficient funds in ATM', date: Date.today }
     expect(subject.withdraw(100, '1234', account)).to eq expected_output
   end
+  it 'reject withdraw if pin is wrong' do
+    expected_output = { status: false, message: 'wrong pin', date: Date.today }
+    expect(subject.withdraw(50, 9999, account)).to eq expected_output
+  end
   it 'allow withdraw if account has enough balance.' do
-    expected_output = { status: true, message: 'success', date: Date.today, amount: 45
-    }
+    expected_output = { status: true, message: 'success', date: Date.today, amount: 45 }
     expect(subject.withdraw(45, '1234', account)).to eq expected_output
   end
 end
