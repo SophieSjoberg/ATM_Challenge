@@ -1,10 +1,12 @@
 class Account
   STANDARD_VALIDITY_YRS = 5
- attr_accessor :pin_code, :balance, :account_status
-  def initialize
+ attr_accessor :pin_code, :balance, :account_status, :owner
+  def initialize(attrs = {})
     @pin_code = generate_pin
     @balance = 0
     @account_status = :active
+
+    set_owner(attrs[:owner])
   end
 
     def exp_date
@@ -18,5 +20,9 @@ class Account
 
     def self.deactivate(account)
       account.account_status = :deactivated
+    end
+
+    def set_owner(obj)
+      obj == nil ? missing_owner : @owner = obj
     end
 end
