@@ -15,4 +15,8 @@ class Account
     def generate_pin
       rand(1000..9999)
     end
+
+    def self.deactivate(account)
+      account.account_status = :deactivated
+    end
 end
