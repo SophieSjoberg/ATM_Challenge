@@ -21,7 +21,10 @@ class Person
 
     def deposit(amount)
       @account.nil? ? missing_account : deposit_funds(amount)
+
     end
+
+    
 
     private
 
@@ -29,6 +32,7 @@ class Person
       @cash -= amount
       @account.balance += amount
     end
+
 
     def set_name(name)
       if name.nil?
