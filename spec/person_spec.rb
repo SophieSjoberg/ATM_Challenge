@@ -1,0 +1,44 @@
+require './lib/person'
+require './lib/atm'
+
+describe Person do
+
+  subject { described_class.new(name: 'Sophie') }
+
+  it 'is expected to have a name :name on initialize' do
+    expect(subject.name). not_to be nil
+  end
+
+  it 'is expected to raise error if no name is set' do
+    expect { described_class.new }.to raise_error 'A name is required'
+  end
+
+  it 'is expected to have a :cash attribute with a value of 0 on initialize' do
+    expect(subject.cash).to eq 0
+  end
+
+  it 'is expected to have :account attribute' do
+    expect(subject.account).to be nil
+  end
+
+  describe 'can create an Account' do
+    before { subject.create_account }
+    it 'of Account class' do
+    end
+    it 'with himself as owner' do
+      expect(subject.account.owner).to be subject
+    end
+  end
+
+  describe 'can manage funds if account been created' do
+    let(:atm) { Atm.new }
+    before { subject.create_account }
+    it 'can deposit funds' do
+      expect(subject.deposit(100)).to be_truthy
+    end
+    #it 'can deposit funds' do
+      #expect 'can\'t deposit funds' do
+      #expect { subject.deposit(100) }.to raise_error(RuntimeError, 'No account present')
+    #end
+  end
+end
