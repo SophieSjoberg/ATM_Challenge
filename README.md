@@ -24,10 +24,11 @@ Create Account
 Create ATM
 `atm = Atm.new`
 
-Deposit money
+Deposit money 
 `person.deposit(100)`
 
-Withdraw money
+Withdraw money (using pin generated from creating account)
+
 `person.withdraw({amount:50, account:account, atm:atm, pin:'1234'})`
 
 Check balance account
