@@ -11,20 +11,20 @@ I added `rspec`to Gemfile and ran `$ bundle install`
 
 Open irb in your terminal and run the following commands:
 
-`load './lib/atm.rb'``
+`load './lib/atm.rb'`
 
-`load './lib/person.rb'``
+`load './lib/person.rb'`
 
-``# Create Person
+`Create Person
 person = Person.new({name: 'Sophie'})`
 
-# Create Account
-account = person.create_account
+`Create Account
+account = person.create_account`
 
-# Create ATM
+`Create ATM
 atm = Atm.new
-## Resources``
+`
 
 
 ## Resources
-CraftAcademy course material, coaches, google and Stackoverflow. 
+CraftAcademy course material, coaches, google and Stackoverflow.
