@@ -25,7 +25,7 @@ Create ATM
 `atm = Atm.new`
 
 Deposit money
-`person.deposit(100)``
+`person.deposit(100)`
 
 Withdraw money
 `person.withdraw({amount:50, account:account, atm:atm, pin:'1234'})`
