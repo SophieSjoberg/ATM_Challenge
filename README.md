@@ -24,6 +24,18 @@ Create Account
 Create ATM
 `atm = Atm.new`
 
+Deposit money
+`person.deposit(100)``
+
+Withdraw money
+`person.withdraw({amount:50, account:account, atm:atm, pin:'1234'})`
+
+Check balance account
+`account.balance`
+
+Check balance of the ATM
+`atm.funds`
+
 
 ## Resources
 CraftAcademy course material, coaches, google and Stackoverflow.
